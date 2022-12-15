@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: consolas;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #edf1f4;
+}
+
+.dark {
+    background-color: #282c2f;
+}
+
+
+.calculator {
+    position: relative;
+    width: 340px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.1), -15px -15px 20px #fffb;
+}
+.dark .calculator {
+    
+    background: #33393e;
+    box-shadow: 15px 15px 20px rgb(0,0,0,0.25), -15px -15px 20px rgba(255,255,255,0.1);
+
+}
+
+
+.calculator .buttons {
+    position: relative;
+    display: grid;   /* grid view */
+}
+
+
+
+.calculator .buttons #value {
+    position: relative;
+    grid-column: span 4; /*column 4 */
+    user-select: none; /* prevent the text selection //not to copy */
+    overflow: auto;
+    width: 100%;
+    text-align: end;
+    color: #5166d6; 
+    height: 100px;
+    line-height: 100px;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 20px #fff; /*inset - turns box shadow to the inside`*/
+    border-radius: 10px;
+    margin-bottom: 12px;
+    padding: 0 20px;
+    font-size: 2em; /* em - double the size of parent */
+    font-weight: 500;
+}
+
+.dark .calculator .buttons #value {
+    color: #eee;
+    box-shadow: inset 15px 15px 20px rgba(0, 0, 0, 0.5), inset -15px -15px 20px rgba(255,255,255,0.1); /*inset - turns box shadow to the inside`*/
+
+}
+
+
+
+
+.calculator .buttons span {
+    position: relative;
+    padding: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 20px #fff;
+    margin: 10px;
+    cursor: pointer;
+    user-select: none;
+    min-width: 40px;
+    display: flex; /* used to specify center using justify content and align item*/
+    justify-content: center; /* center horizontally */
+    align-items: center; 
+    font-size: 1.2em;
+    color: #666;
+    border: 2px solid #edf1f4;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px #fff;
+    border-radius: 10px;
+}
+
+
+.dark .calculator .buttons span {
+    color: #eee;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25), -5px -5px 10px rgba(255,255,255,0.1);
+}
+
+
+
+
+.calculator .buttons span:active {
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px #fff;
+    color: #f44336;
+}
+
+.dark .calculator .buttons span:active {
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.25), inset -5px -5px 10px rgba(255,255,255,0.1);
+
+}
+
+.calculator .buttons span#clear {
+    grid-column: span 2; /* contains 2 column */
+    background: #f44336;
+    color: #fff;
+    border: 2px solid #edf1f4;
+}
+
+
+.calculator .buttons span#plus {
+    grid-row: span 2; /* contains 2 row */
+    background: #31a935;
+    color: #fff;
+    border: 2px solid #edf1f4;
+}
+
+
+.calculator .buttons span#equal {
+    grid-row: span 2; /* contains 2 row */
+    background: #2196f3;
+    color: #fff;
+    border: 2px solid #edf1f4;
+}
+.dark .calculator .buttons span#clear,
+.dark .calculator .buttons span#plus,
+.dark .calculator .buttons span#equal {
+    border: 2px solid #333;
+}
+
+.calculator .buttons span#clear:active,
+.calculator .buttons span#plus:active,
+.calculator .buttons span#equal:active {
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px #fff, inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark .calculator .buttons span#clear:active,
+.dark .calculator .buttons span#plus:active,
+.dark .calculator .buttons span#equal:active 
+{
+box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.toggleBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 30px;
+    height: 30px;
+    top: 30px;
+    right: 30px;
+    background: #666;
+    position: fixed;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #edf1f4;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1),
+    -5px -5px 10px #fff;
+}
+.toggleBtn::before{
+    content: '\f186';
+    font-family: fontAwesome;
+
+}
+
+.dark .toggleBtn {
+    background: #edf1f4;
+    border: 2px solid #333;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25),
+    -5px -5px 10px rgba(255,255,255,0.25);
+    color: black;
+    
+}
+
+.dark .toggleBtn::before{
+    content: '\f185';
+    font-family: fontAwesome;
+
+}
+
